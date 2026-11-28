@@ -1,0 +1,25 @@
+{
+  "historical_rows": 16140,
+  "historical_exact_rows": 16140,
+  "historical_max_abs_difference": {
+    "minus_llr": 0.0,
+    "minus_llr_fwd": 0.0,
+    "minus_llr_rev": 0.0,
+    "next_token_jsd_mean": 0.0
+  },
+  "eight_historical_max_abs_difference": {
+    "minus_llr": 0.0,
+    "minus_llr_fwd": 0.0,
+    "minus_llr_rev": 0.0,
+    "next_token_jsd_mean": 0.0
+  },
+  "independently_verified_strand_windows": 16,
+  "gb_vs_gh_max_abs_difference": {
+    "minus_llr": 7.892745137214661,
+    "minus_llr_fwd": 5.362288117408752,
+    "minus_llr_rev": 12.010610103607178,
+    "next_token_jsd_mean": 0.0002458626202042069
+  },
+  "median_downstream_jsd_ratio_gb_over_gh": 0.08588153444291886,
+  "gb_sign_flips": 4
+}

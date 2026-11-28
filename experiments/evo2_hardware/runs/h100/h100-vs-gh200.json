@@ -1,0 +1,17 @@
+{
+  "mode": "h100-vs-gh200",
+  "rows": 8,
+  "passed": true,
+  "thresholds": {
+    "max_abs_llr": 0.1,
+    "min_llr_correlation": 0.99,
+    "min_embedding_cosine": 0.995,
+    "max_abs_probe_probability": 0.05
+  },
+  "observed": {
+    "max_abs_llr": 0.0,
+    "min_llr_correlation": 1.0,
+    "min_embedding_cosine": 0.9999992847442627,
+    "max_abs_probe_probability": 0.0
+  }
+}

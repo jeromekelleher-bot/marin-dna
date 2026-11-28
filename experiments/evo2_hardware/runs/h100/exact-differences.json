@@ -1,0 +1,19 @@
+{
+  "rows": 8,
+  "unequal_elements": {
+    "llr": 0,
+    "minus_llr": 0,
+    "abs_llr": 0,
+    "next_token_jsd_mean": 0,
+    "llr_fwd": 0,
+    "minus_llr_fwd": 0,
+    "abs_llr_fwd": 0,
+    "next_token_jsd_mean_fwd": 0,
+    "llr_rev": 0,
+    "minus_llr_rev": 0,
+    "abs_llr_rev": 0,
+    "next_token_jsd_mean_rev": 0,
+    "emb_ref": 0,
+    "emb_alt": 0
+  }
+}

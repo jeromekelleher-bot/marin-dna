@@ -1,0 +1,11 @@
+{
+  "job_name": "evo595-gb200-dev8-20261128-115108",
+  "image": "nvcr.io/nvidia/pytorch@sha256:abd3b736a54ae3d488e3368996c22c5e52351bd76dfa18deb13e7778097a7f1d",
+  "scratch_key": "tmp/ttl=1d/issue-595/evo595-gb200-dev8-20261128-115108/inputs.tar",
+  "out_key": "marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108",
+  "limit_seconds": 1800,
+  "input_sha256": "213176c3a89394bdd5405438b75a40398d6a6d00a4c394cea432c888e75c906e",
+  "staged": true,
+  "submit_invoked": true,
+  "job_id": "/ubuntu/evo595-gb200-dev8-20261128-115108"
+}

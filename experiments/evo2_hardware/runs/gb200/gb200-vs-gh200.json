@@ -1,0 +1,17 @@
+{
+  "mode": "gb200-vs-gh200",
+  "rows": 8,
+  "passed": false,
+  "thresholds": {
+    "max_abs_llr": 0.1,
+    "min_llr_correlation": 0.99,
+    "min_embedding_cosine": 0.995,
+    "max_abs_probe_probability": 0.05
+  },
+  "observed": {
+    "max_abs_llr": 7.892745137214661,
+    "min_llr_correlation": 0.538172771786127,
+    "min_embedding_cosine": 0.7780020833015442,
+    "max_abs_probe_probability": 0.29199738427996635
+  }
+}

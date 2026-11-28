@@ -1,0 +1,149 @@
+{
+  "date_of_paired_runs": "2026-11-28",
+  "paper_issue": "https://github.com/Open-Athena/marin-dna-paper/issues/27",
+  "checkpoint_parts": [
+    {
+      "uri": "https://huggingface.co/arcinstitute/evo2_40b/resolve/d529aa57c30771814217ad89baaeaf6e2315c7d7/evo2_40b.pt.part0",
+      "sha256": "3b74fa4e6158d49265e3e270ba8869390d064358f8bf3d2af0b3e1772728f485",
+      "bytes": 41126745847
+    },
+    {
+      "uri": "https://huggingface.co/arcinstitute/evo2_40b/resolve/d529aa57c30771814217ad89baaeaf6e2315c7d7/evo2_40b.pt.part1",
+      "sha256": "bdc4a76e0f23f8295e7061c2f0deff24f723bd916dc4cdc4d9216cac9c2d49d5",
+      "bytes": 41126745847
+    }
+  ],
+  "scorer": "https://github.com/Open-Athena/marin-dna/tree/75a66669e90e6a6bde297415beb5e21a14b6d28f/scripts/evo2_eval",
+  "probe_reader": "https://github.com/Open-Athena/marin-dna/blob/87194acc384c8e34418ffd5bcb4ee3560d299a2d/snakemake/analysis/evals_v2/src/marin_dna_evals/mendelian_holdout.py",
+  "reference": {
+    "genome.fa.gz": {
+      "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz",
+      "bytes": 966122234,
+      "sha256": "10b63e0e06faa6b7ea3a4bafb32094dc1a127f9ce38589f76921da6d7d89574e"
+    },
+    "genome.fa.gz.fai": {
+      "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz.fai",
+      "bytes": 6406,
+      "sha256": "04f94041d71ce5d27e71b73ef972f07c600fd27c147504dd9a2a2ca1944095f0"
+    },
+    "genome.fa.gz.gzi": {
+      "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz.gzi",
+      "bytes": 772408,
+      "sha256": "5fde466a284690b86166b6d2686ad36a6e81f0d32d4f9d50efeb87b788eec5a2"
+    }
+  },
+  "historical_score_crosscheck": {
+    "uri": "https://gist.githubusercontent.com/gonzalobenegas/3649e68fb63ca1f3443e4486078eb4d8/raw/2b425e759811c201ca806ae4c8733fd7732220a6/evo2_40b_train.parquet",
+    "bytes": 1693519,
+    "sha256": "c84b5db29bbf5dd275b442e3b991a46a7a815145b2acddcbee0a6269e3a89652"
+  },
+  "runs": {
+    "gb200": {
+      "gpu": "NVIDIA GB200",
+      "gpu_count": 1,
+      "host_architecture": "aarch64",
+      "iris": "https://iris.oa.dev/#/job/%2Fubuntu%2Fevo595-gb200-dev8-20261128-115108",
+      "container": "nvcr.io/nvidia/pytorch@sha256:abd3b736a54ae3d488e3368996c22c5e52351bd76dfa18deb13e7778097a7f1d",
+      "artifact_files": {
+        "workspace/run.sh": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/workspace/run.sh",
+          "bytes": 2636,
+          "sha256": "5648a1d35bc6105b27262c7c78551b99381b92ee3d8fda8040735e90d9ad9c56"
+        },
+        "workspace/weights.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/workspace/weights.py",
+          "bytes": 2719,
+          "sha256": "691ff8d7e98eb4bc974117cc1461760aad525a808a921058de3f4aef21ead08c"
+        },
+        "runtime.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/runtime.log",
+          "bytes": 55625,
+          "sha256": "16449a28d990b7cf4dd1aea26ef825a096878f4e17ae0f861a24f438708cdd79"
+        },
+        "validate.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/validate.py",
+          "bytes": 3226,
+          "sha256": "0df2b5d54196bd32641f540d726ed26b0262381871373525c6f0a951c7cdb19e"
+        },
+        "environment.txt": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/environment.txt",
+          "bytes": 21902,
+          "sha256": "74398f465c9441842720095a329c7a472c4c5e9470a6e6eb5eccaef858ebbdd0"
+        }
+      },
+      "artifact_prefix": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/",
+      "input_bundle": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/reproduction/inputs.tar",
+        "bytes": 1122877440,
+        "sha256": "213176c3a89394bdd5405438b75a40398d6a6d00a4c394cea432c888e75c906e"
+      }
+    },
+    "h100": {
+      "gpu": "NVIDIA H100 80GB HBM3",
+      "gpu_count": 2,
+      "host_architecture": "x86_64",
+      "iris": "https://iris.oa.dev/#/job/%2Fjk%2Fevo595-h100x2-dev8-20261128-121216",
+      "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+      "artifact_files": {
+        "workspace/run.sh": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/workspace/run.sh",
+          "bytes": 2671,
+          "sha256": "69a1da674e72d7e5b76dd3fc28e47e1f0de308478f27917cc1e909a510d4437c"
+        },
+        "workspace/weights.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/workspace/weights.py",
+          "bytes": 2719,
+          "sha256": "691ff8d7e98eb4bc974117cc1461760aad525a808a921058de3f4aef21ead08c"
+        },
+        "runtime.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/runtime.log",
+          "bytes": 55172,
+          "sha256": "c27501193ae1c2886ade9e3e1b27af1ef68fe09783fb58b85dd08c8cc765e8f6"
+        },
+        "validate.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/validate.py",
+          "bytes": 3224,
+          "sha256": "c04d63009d797c2560a7897ca1b126de3fa3d05bf8259b3d3298980eac904a2c"
+        },
+        "environment.txt": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/environment.txt",
+          "bytes": 21978,
+          "sha256": "b7fd0744d87b0ef5b8aa1ca4bcd52986c9b17a50b2aeb7ef58b6d11c50c474b2"
+        }
+      },
+      "artifact_prefix": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/",
+      "input_bundle": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/reproduction/inputs.tar",
+        "bytes": 1129543680,
+        "sha256": "3a8f631c3aca189695fefa450dcbcfbc7b09b47a88ca9e0c3c254d7fea4169c7"
+      }
+    }
+  },
+  "export_inputs": {
+    "train.parquet": {
+      "uri": "https://huggingface.co/datasets/bolinas-dna/evals_mendelian_traits/resolve/4aed58e50c5dea0b878a665007af2ef9e5108e9f/train.parquet",
+      "bytes": 1071404,
+      "sha256": "919abf532debd9f5e339b94cd4eef9868cbfa92dbe4fc57a0b1398da481f469f"
+    },
+    "gh200.parquet": {
+      "uri": "s3://oa-bolinas/analysis/evo2_embeddings/mendelian_traits/scores/evo2_40b_train.parquet",
+      "bytes": 1060830393,
+      "sha256": "f6898689fe792b1647f6d63cba9e15edfd79b00bdaf461910ce0849510dcf645"
+    },
+    "classifiers.joblib": {
+      "uri": "s3://oa-bolinas/analysis/evo2_embeddings/mendelian_traits/probe/evo2_40b_train_probe.joblib",
+      "bytes": 3676921,
+      "sha256": "a73c1799047bf7a22c63bce9b429af93a73cd20b968c640cc5393fff2cb4193f"
+    },
+    "gb200.parquet": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-gb200-dev8-20261128-115108/gb200-eight.parquet",
+      "bytes": 799622,
+      "sha256": "42af366e616f0e7664321a9e20697d33514fca2c433e53b8ec4f48aeb76d093f"
+    },
+    "h100.parquet": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100x2-dev8-20261128-121216/h100-eight.parquet",
+      "bytes": 799607,
+      "sha256": "144a87322f24e23162f1aaf158db6842d2fce0487827ba07033af727bda8fe53"
+    }
+  }
+}
