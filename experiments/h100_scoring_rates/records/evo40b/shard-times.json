@@ -1,0 +1,56 @@
+{
+  "partitions": [
+    {
+      "rows": 2372,
+      "strand_elapsed_seconds": {
+        "+": {
+          "first": 3,
+          "last": 6770
+        },
+        "-": {
+          "first": 2,
+          "last": 6769
+        }
+      }
+    },
+    {
+      "rows": 2373,
+      "strand_elapsed_seconds": {
+        "+": {
+          "first": 3,
+          "last": 6788
+        },
+        "-": {
+          "first": 2,
+          "last": 6787
+        }
+      }
+    },
+    {
+      "rows": 2372,
+      "strand_elapsed_seconds": {
+        "+": {
+          "first": 4,
+          "last": 6768
+        },
+        "-": {
+          "first": 2,
+          "last": 6765
+        }
+      }
+    },
+    {
+      "rows": 2373,
+      "strand_elapsed_seconds": {
+        "+": {
+          "first": 3,
+          "last": 6781
+        },
+        "-": {
+          "first": 2,
+          "last": 6780
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "evo1b": ["arcinstitute/evo2_1b_base", "2279e1df422c991037470302360edd40d0d2ea1e", "evo2_1b_base.pt", 2698327083, "8ffba7d0e6445a8f2c92d9ff1c4e772c7f73ca9179f5e0c699b8b0ca1b966f64"],
+  "evo7b": ["arcinstitute/evo2_7b", "bda0089f92582d5baabf0f22d9fc85f3588f6b58", "evo2_7b.pt", 13766621200, "c66645929dc1b9c631f5be656da8726f38946315dc9167000a615dd626fcecf4"],
+  "marin": ["marin-dna/marin-dna-exp135-m5.1", "c0676b2012b8b9c526deb26ff517f6b92b6d375d", "model.safetensors", 4483112944, "da8fcb8dc0c2eef3206c9636c608bea39c227f87ff7c690aeb749a1bba63d02e"]
+}

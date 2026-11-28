@@ -1,0 +1,37 @@
+{
+  "job": "/jk/rates595-evo1b-h100-20261128-153534/0:0",
+  "configuration": "evo1b",
+  "rows": 9490,
+  "artifacts": [
+    {
+      "file": "benchmark.json",
+      "sha256": "59fe9edf58a21ea819fe1dc1dad04600dcea9d9ce7243c3e569c1e72c37f50be",
+      "bytes": 1217
+    },
+    {
+      "file": "environment.txt",
+      "sha256": "6eda8cf88f1c0db1ffff06b93ca723b57fabb8e87219040695e680621e2a10a3",
+      "bytes": 22027
+    },
+    {
+      "file": "scores.parquet",
+      "sha256": "622f848534596fb706fd6e996b5471d7a298e0896b30fc204d8d5d79f46c65ad",
+      "bytes": 148034933
+    },
+    {
+      "file": "strand-+.json",
+      "sha256": "cbba2b6312ff72c9259c15110895b064ccb44b857fd22b232f93b21e81af8e68",
+      "bytes": 15279
+    },
+    {
+      "file": "strand--.json",
+      "sha256": "3138c57e90f34b7b1a428c377f12dbb9c3828a034de34e25a93f28233a00426e",
+      "bytes": 15294
+    },
+    {
+      "file": "score.log",
+      "sha256": "424a3d750555e90d6e795f37e9cb3f638a97c344cff9d09e75a3e246d4a31034",
+      "bytes": 102933
+    }
+  ]
+}

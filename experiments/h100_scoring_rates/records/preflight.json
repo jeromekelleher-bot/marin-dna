@@ -1,0 +1,7 @@
+{
+  "rows": 9490,
+  "strand_rows": 18980,
+  "source_sha256": "658dd3c49b2c171d7c5c973e014dd3d2e8d425e25187eb30513df64d9ef58883",
+  "harness_sha256": "63993248c8c328e64da700d77997c8a00486dabbca6513463027ca401372ffc1",
+  "both_strands_metadata_and_255_bases_verified": true
+}

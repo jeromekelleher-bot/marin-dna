@@ -1,0 +1,32 @@
+{
+  "iris_task": "/jk/evo595-h100-test-r2-20261128-124337/0:0",
+  "rows": 9490,
+  "dataset_sha256": "658dd3c49b2c171d7c5c973e014dd3d2e8d425e25187eb30513df64d9ef58883",
+  "result": {
+    "file": "evo2_40b_test.parquet",
+    "sha256": "27a2d22c5cd4eacba597ab6817e3ece9a2684292c561252ef87057f839549b7d",
+    "bytes": 624241209
+  },
+  "partitions": [
+    {
+      "file": "shards/scores-0.parquet",
+      "sha256": "deb77bb9af5e96994020a8d144edb58b0fbbf3b5bfd1821cdb5d7418088ba646",
+      "bytes": 156944846
+    },
+    {
+      "file": "shards/scores-1.parquet",
+      "sha256": "e1012cce45cd3c41cd7fc480c77fc68e322f911265e10872811705803384077c",
+      "bytes": 157037924
+    },
+    {
+      "file": "shards/scores-2.parquet",
+      "sha256": "e6d5e4fc2dedc976876cc774231c952303431035766908a05a3b130e75344de8",
+      "bytes": 156971275
+    },
+    {
+      "file": "shards/scores-3.parquet",
+      "sha256": "93d1301a75abafc3d4fe3c5a462cbd4d7c8bb208302441d43134b300c9f42533",
+      "bytes": 157037606
+    }
+  ]
+}

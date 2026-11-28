@@ -1,0 +1,27 @@
+{
+  "job": "/jk/rates595-bf16-h100-r2-20261128-162808/0:0",
+  "configuration": "bf16",
+  "rows": 9490,
+  "artifacts": [
+    {
+      "file": "benchmark.json",
+      "sha256": "4e43034b21c282d9bd0a68d986b9e1c690dbe63b278f8297696015e58148a0bd",
+      "bytes": 2208
+    },
+    {
+      "file": "environment.txt",
+      "sha256": "01912c045a5da5ebfa7100fd15db68d93b785d9e3c354cb29106564feab58e0e",
+      "bytes": 1710
+    },
+    {
+      "file": "scores.parquet",
+      "sha256": "32f72b302d38c57dc7e319f11b7f891ce3cbe588d352d95f33a28583059ced71",
+      "bytes": 147413656
+    },
+    {
+      "file": "benchmark.log",
+      "sha256": "a0b5a67d08218ef2635f63d409d99773b16d885c5102876ee7b481c2be79ac77",
+      "bytes": 2348
+    }
+  ]
+}

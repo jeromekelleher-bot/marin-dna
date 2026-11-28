@@ -1,0 +1,27 @@
+{
+  "job": "/jk/rates595-fp8-h100-r2-20261128-162825/0:0",
+  "configuration": "fp8",
+  "rows": 9490,
+  "artifacts": [
+    {
+      "file": "benchmark.json",
+      "sha256": "bfc02cbb89d8e349ebf64c09cc9a0dc284d80693103696f6daaaeaabc00c5caa",
+      "bytes": 2236
+    },
+    {
+      "file": "environment.txt",
+      "sha256": "92ca631f9653f84d0e9d664bf04b2d38782f8d5fc48b81f8e215d0e1f434a436",
+      "bytes": 1743
+    },
+    {
+      "file": "scores.parquet",
+      "sha256": "73c747fd9847fb67c2b67f7ff968d6363a91cc4f09754acfd1dcbb0e732d78ee",
+      "bytes": 147413346
+    },
+    {
+      "file": "benchmark.log",
+      "sha256": "4e884ed89f0376d7ad93b7d01b7cd041266eb5b95ae0b7aa5c9e65340a7b1978",
+      "bytes": 2856
+    }
+  ]
+}

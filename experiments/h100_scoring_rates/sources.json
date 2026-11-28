@@ -1,0 +1,291 @@
+{
+  "hardware": "NVIDIA H100 80GB HBM3",
+  "region": "CoreWeave US-EAST-02A",
+  "dataset": {
+    "release": "https://huggingface.co/datasets/bolinas-dna/evals_mendelian_traits/resolve/4aed58e50c5dea0b878a665007af2ef9e5108e9f/test.parquet",
+    "release_sha256": "658dd3c49b2c171d7c5c973e014dd3d2e8d425e25187eb30513df64d9ef58883",
+    "marin_harness": "https://huggingface.co/datasets/marin-dna/evals_mendelian_traits_harness_255/resolve/7b92f047f9a36f90e9ac47886afa2a99264ee35c/test.parquet",
+    "marin_harness_sha256": "63993248c8c328e64da700d77997c8a00486dabbca6513463027ca401372ffc1",
+    "rows": 9490,
+    "reference": {
+      "genome.fa.gz": {
+        "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz",
+        "bytes": 966122234,
+        "sha256": "10b63e0e06faa6b7ea3a4bafb32094dc1a127f9ce38589f76921da6d7d89574e"
+      },
+      "genome.fa.gz.fai": {
+        "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz.fai",
+        "bytes": 6406,
+        "sha256": "04f94041d71ce5d27e71b73ef972f07c600fd27c147504dd9a2a2ca1944095f0"
+      },
+      "genome.fa.gz.gzi": {
+        "uri": "s3://oa-bolinas/data/genomes/homo_sapiens/GRCh38/ensembl-release-115/Homo_sapiens.GRCh38.dna_sm.primary_assembly.fa.gz.gzi",
+        "bytes": 772408,
+        "sha256": "5fde466a284690b86166b6d2686ad36a6e81f0d32d4f9d50efeb87b788eec5a2"
+      }
+    }
+  },
+  "scorers": {
+    "evo": "https://github.com/Open-Athena/marin-dna/tree/75a66669e90e6a6bde297415beb5e21a14b6d28f/scripts/evo2_eval",
+    "marin": "https://github.com/Open-Athena/marin-dna/tree/0802b3119268ccec4a0128a68d09b5c36cf4ca55/scripts/issue430"
+  },
+  "checkpoints": {
+    "evo1b": {
+      "uri": "https://huggingface.co/arcinstitute/evo2_1b_base/resolve/2279e1df422c991037470302360edd40d0d2ea1e/evo2_1b_base.pt",
+      "bytes": 2698327083,
+      "sha256": "8ffba7d0e6445a8f2c92d9ff1c4e772c7f73ca9179f5e0c699b8b0ca1b966f64"
+    },
+    "evo7b": {
+      "uri": "https://huggingface.co/arcinstitute/evo2_7b/resolve/bda0089f92582d5baabf0f22d9fc85f3588f6b58/evo2_7b.pt",
+      "bytes": 13766621200,
+      "sha256": "c66645929dc1b9c631f5be656da8726f38946315dc9167000a615dd626fcecf4"
+    },
+    "marin": {
+      "uri": "https://huggingface.co/marin-dna/marin-dna-exp135-m5.1/resolve/c0676b2012b8b9c526deb26ff517f6b92b6d375d/model.safetensors",
+      "bytes": 4483112944,
+      "sha256": "da8fcb8dc0c2eef3206c9636c608bea39c227f87ff7c690aeb749a1bba63d02e"
+    },
+    "evo40b": [
+      {
+        "uri": "https://huggingface.co/arcinstitute/evo2_40b/resolve/d529aa57c30771814217ad89baaeaf6e2315c7d7/evo2_40b.pt.part0",
+        "sha256": "3b74fa4e6158d49265e3e270ba8869390d064358f8bf3d2af0b3e1772728f485",
+        "bytes": 41126745847
+      },
+      {
+        "uri": "https://huggingface.co/arcinstitute/evo2_40b/resolve/d529aa57c30771814217ad89baaeaf6e2315c7d7/evo2_40b.pt.part1",
+        "sha256": "bdc4a76e0f23f8295e7061c2f0deff24f723bd916dc4cdc4d9216cac9c2d49d5",
+        "bytes": 41126745847
+      }
+    ]
+  },
+  "runs": {
+    "evo40b": {
+      "job_id": "/jk/evo595-h100-test-r2-20261128-124337",
+      "iris": "https://iris.oa.dev/#/job/%2Fjk%2Fevo595-h100-test-r2-20261128-124337",
+      "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+      "gpus_per_task": 8,
+      "input": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-heldout-20261128-123306/inputs.tar",
+        "bytes": 1129144320,
+        "sha256": "044f8ab2bc5b0685aa473de8f06b7d85a9c5e4a1c860ea2d559acbe17c6a9995"
+      },
+      "runner": {
+        "submit.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/submit.py",
+          "bytes": 4506,
+          "sha256": "147d26d059ca57aebcadc281511cb5a04ff7bb9b05ef71f4f2ec31332aab63f7"
+        },
+        "workspace/run.sh": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/workspace/run.sh",
+          "bytes": 2369,
+          "sha256": "2d5cbb85d64757800c05b34ef66db37e7865677e57070365502f675837879364"
+        },
+        "workspace/full.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/workspace/full.py",
+          "bytes": 6683,
+          "sha256": "1cb4df2e9fb34faa9a4dd936e1c01b3cae32d35205c051fd3bc2c4b1b3b619c2"
+        },
+        "workspace/weights.py": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/workspace/weights.py",
+          "bytes": 2719,
+          "sha256": "691ff8d7e98eb4bc974117cc1461760aad525a808a921058de3f4aef21ead08c"
+        }
+      },
+      "timing_inputs": {
+        "logs/partition-0.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/logs/partition-0.log",
+          "bytes": 397694,
+          "sha256": "8507f5e13f239149610abcf39466169fd23d47e255d62293f12c395d83a89fcf"
+        },
+        "logs/partition-1.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/logs/partition-1.log",
+          "bytes": 397933,
+          "sha256": "7a13bb9607217ea6606213b6b19fc4e3e2be0455672527788e6aa48d2c011ffa"
+        },
+        "logs/partition-2.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/logs/partition-2.log",
+          "bytes": 397694,
+          "sha256": "b3b62dcbb584d00901364b155a53a157a67f396bac8e88563735cba1a59d1d06"
+        },
+        "logs/partition-3.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/logs/partition-3.log",
+          "bytes": 397882,
+          "sha256": "f80cdd9d106bd3dc8b04718741cd45b0551ab1d6f4e7206a38c2c4a4dab501c4"
+        }
+      },
+      "scores": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/evo2_40b_test.parquet",
+        "bytes": 624241209,
+        "sha256": "27a2d22c5cd4eacba597ab6817e3ece9a2684292c561252ef87057f839549b7d"
+      },
+      "receipt": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/complete.json",
+        "bytes": 1004,
+        "sha256": "297d175d70f3f1326f2bcde1b6d02a82970687bb4a5718e17043b2d7ce2c1ffd"
+      },
+      "environment": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/environment.txt",
+        "bytes": 21929,
+        "sha256": "ec9aaf09b8e397577bd7591cf26042ddb02ccabce41e3cc9f03f770cecee4943"
+      },
+      "run_metadata": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-test-r2-20261128-124337/run.json",
+        "bytes": 704,
+        "sha256": "c56a54f0b047b31cb6dcce5ea1b518ceffb19924154b53fa17ff6ee5cea75bc3"
+      }
+    },
+    "evo1b": {
+      "job_id": "/jk/rates595-evo1b-h100-20261128-153534",
+      "iris": "https://iris.oa.dev/#/job/%2Fjk%2Frates595-evo1b-h100-20261128-153534",
+      "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+      "gpus_per_task": 1,
+      "input": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/evo595-h100-heldout-20261128-123306/inputs.tar",
+        "bytes": 1129144320,
+        "sha256": "044f8ab2bc5b0685aa473de8f06b7d85a9c5e4a1c860ea2d559acbe17c6a9995"
+      },
+      "runner": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/runner.tar.gz",
+        "bytes": 8331,
+        "sha256": "827a40b0549934a37c4c1cbf4a3ab91db8cd8bd2077cbf9fac5b2436f9cba25d"
+      },
+      "timing_inputs": {
+        "benchmark.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/benchmark.json",
+          "bytes": 1217,
+          "sha256": "59fe9edf58a21ea819fe1dc1dad04600dcea9d9ce7243c3e569c1e72c37f50be"
+        },
+        "strand-+.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/strand-+.json",
+          "bytes": 15279,
+          "sha256": "cbba2b6312ff72c9259c15110895b064ccb44b857fd22b232f93b21e81af8e68"
+        },
+        "strand--.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/strand--.json",
+          "bytes": 15294,
+          "sha256": "3138c57e90f34b7b1a428c377f12dbb9c3828a034de34e25a93f28233a00426e"
+        }
+      },
+      "scores": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/scores.parquet",
+        "bytes": 148034933,
+        "sha256": "622f848534596fb706fd6e996b5471d7a298e0896b30fc204d8d5d79f46c65ad"
+      },
+      "receipt": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/complete.json",
+        "bytes": 1022,
+        "sha256": "3bfb0d13124758b77a7fe2a43544ab5d30f9a65d3db5f9c40d30fb07a7e644ad"
+      },
+      "environment": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/environment.txt",
+        "bytes": 22027,
+        "sha256": "6eda8cf88f1c0db1ffff06b93ca723b57fabb8e87219040695e680621e2a10a3"
+      },
+      "run_metadata": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-evo1b-h100-20261128-153534/run.json",
+        "bytes": 1707,
+        "sha256": "1e7de2cd053b8f5110cf35d8ada700ce876bb962719be1af75a7c2b7010addc1"
+      }
+    },
+    "bf16": {
+      "job_id": "/jk/rates595-bf16-h100-r2-20261128-162808",
+      "iris": "https://iris.oa.dev/#/job/%2Fjk%2Frates595-bf16-h100-r2-20261128-162808",
+      "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+      "gpus_per_task": 1,
+      "input": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/timing-inputs/54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4.tar",
+        "bytes": 56811520,
+        "sha256": "54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4"
+      },
+      "runner": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/runner.tar.gz",
+        "bytes": 9996,
+        "sha256": "6b7eb5259e374a95ff2c969a9b5512d26e3ba2d6c02acde0fb00dc8e6ed4572d"
+      },
+      "timing_inputs": {
+        "benchmark.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/benchmark.json",
+          "bytes": 2208,
+          "sha256": "4e43034b21c282d9bd0a68d986b9e1c690dbe63b278f8297696015e58148a0bd"
+        }
+      },
+      "scores": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/scores.parquet",
+        "bytes": 147413656,
+        "sha256": "32f72b302d38c57dc7e319f11b7f891ce3cbe588d352d95f33a28583059ced71"
+      },
+      "receipt": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/complete.json",
+        "bytes": 726,
+        "sha256": "f5eaddc94e0d5f6eedf1a4523d00a2ff710f27c4e70395f430100c393698b0f9"
+      },
+      "environment": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/environment.txt",
+        "bytes": 1710,
+        "sha256": "01912c045a5da5ebfa7100fd15db68d93b785d9e3c354cb29106564feab58e0e"
+      },
+      "run_metadata": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-r2-20261128-162808/run.json",
+        "bytes": 1805,
+        "sha256": "8c24b3c6de6d5eb9f2bd20db741ce3db1a19fc5de1dc092b86bbf4a601522761"
+      },
+      "replaces": "/jk/rates595-bf16-h100-20261128-153724"
+    },
+    "fp8": {
+      "job_id": "/jk/rates595-fp8-h100-r2-20261128-162825",
+      "iris": "https://iris.oa.dev/#/job/%2Fjk%2Frates595-fp8-h100-r2-20261128-162825",
+      "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+      "gpus_per_task": 1,
+      "input": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/timing-inputs/54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4.tar",
+        "bytes": 56811520,
+        "sha256": "54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4"
+      },
+      "runner": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/runner.tar.gz",
+        "bytes": 9995,
+        "sha256": "7af89302fc22800b53474a2225dc5aaf175d1bc52917727c5647a26dbff5fcc0"
+      },
+      "timing_inputs": {
+        "benchmark.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/benchmark.json",
+          "bytes": 2236,
+          "sha256": "bfc02cbb89d8e349ebf64c09cc9a0dc284d80693103696f6daaaeaabc00c5caa"
+        }
+      },
+      "scores": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/scores.parquet",
+        "bytes": 147413346,
+        "sha256": "73c747fd9847fb67c2b67f7ff968d6363a91cc4f09754acfd1dcbb0e732d78ee"
+      },
+      "receipt": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/complete.json",
+        "bytes": 724,
+        "sha256": "abcb59c5bd429aa1abdfc8ebe91bb22d22e3874e6b60ef8685c8908a3126e731"
+      },
+      "environment": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/environment.txt",
+        "bytes": 1743,
+        "sha256": "92ca631f9653f84d0e9d664bf04b2d38782f8d5fc48b81f8e215d0e1f434a436"
+      },
+      "run_metadata": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-r2-20261128-162825/run.json",
+        "bytes": 1798,
+        "sha256": "92c906fac0a5037cc1ab441792543137169bdf5a14edb7337dc3240dbd0fb52f"
+      },
+      "replaces": "/jk/rates595-fp8-h100-20261128-153728"
+    }
+  },
+  "prior_attempts": [
+    {
+      "configuration": "bf16",
+      "job": "/jk/rates595-bf16-h100-20261128-153724",
+      "run_metadata": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-bf16-h100-20261128-153724/run.json"
+    },
+    {
+      "configuration": "fp8",
+      "job": "/jk/rates595-fp8-h100-20261128-153728",
+      "run_metadata": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-20261128-153728/run.json"
+    }
+  ]
+}
