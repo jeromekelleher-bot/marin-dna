@@ -287,5 +287,156 @@
       "job": "/jk/rates595-fp8-h100-20261128-153728",
       "run_metadata": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-fp8-h100-20261128-153728/run.json"
     }
-  ]
+  ],
+  "paired_control": {
+    "job_id": "/jk/rates595-paired-h100-20261128-170939",
+    "iris": "https://iris.oa.dev/#/job/%2Fjk%2Frates595-paired-h100-20261128-170939",
+    "design": "BF16-FP8-FP8-BF16; two fresh processes and six paired-strand times per precision",
+    "gpus_per_task": 1,
+    "container": "nvcr.io/nvidia/pytorch@sha256:36c950490fed05b87814bd831929ec7dbdd8282d9c21a2f6691836fbeb6054e2",
+    "input_sha256": "54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4",
+    "input": "s3://marin-us-east-02a/marin/experiments/issue-595/timing-inputs/54d336da33759ce2b3d197dafce336b6d2930ccb50038be6dbe44d4cd87621c4.tar",
+    "run_metadata": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/run.json",
+      "bytes": 1961,
+      "sha256": "7d82157e32d2440db5b4e62fae8a5be6a57164159e076ab57cb0291816c25616"
+    },
+    "runner": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/runner.tar.gz",
+      "sha256": "f7d66283ea053da7c548e16b1b979611745693b16d5009abb29d58c19036188c",
+      "bytes": 9825
+    },
+    "receipt": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/complete.json",
+      "bytes": 635,
+      "sha256": "3f656116a0a155275945cda3426344144b55fb55ecafcea507bc3ddce7a81b88"
+    },
+    "environment": {
+      "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/environment.txt",
+      "bytes": 1743,
+      "sha256": "92ca631f9653f84d0e9d664bf04b2d38782f8d5fc48b81f8e215d0e1f434a436"
+    },
+    "segments": {
+      "01-bf16": {
+        "complete.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/01-bf16/complete.json",
+          "bytes": 753,
+          "sha256": "6e1e0cb204b0f6abdf91f30265ff6baad6e024adea467bdeecf3b2787ec916b7"
+        },
+        "scores.parquet": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/01-bf16/scores.parquet",
+          "bytes": 147413656,
+          "sha256": "32f72b302d38c57dc7e319f11b7f891ce3cbe588d352d95f33a28583059ced71"
+        },
+        "benchmark.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/01-bf16/benchmark.log",
+          "bytes": 2348,
+          "sha256": "a28783949336157e1af5be96d7c423a0e9cab5fd3b2801a0cc229ec0575d6b43"
+        }
+      },
+      "02-fp8": {
+        "complete.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/02-fp8/complete.json",
+          "bytes": 748,
+          "sha256": "81022cb9356f6ef74c56c89faa7ef1a30691ac89532bdc6ca1e4d66efb24243f"
+        },
+        "scores.parquet": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/02-fp8/scores.parquet",
+          "bytes": 147413346,
+          "sha256": "73c747fd9847fb67c2b67f7ff968d6363a91cc4f09754acfd1dcbb0e732d78ee"
+        },
+        "benchmark.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/02-fp8/benchmark.log",
+          "bytes": 2858,
+          "sha256": "f661766d176b0b833d4e7a554bec1c69e8bf810b2f06fb67659732dbddbc68a2"
+        }
+      },
+      "03-fp8": {
+        "complete.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/03-fp8/complete.json",
+          "bytes": 748,
+          "sha256": "f33bb3beccb2fad9bfa451c33ef24b31c6052b26786a49ba8284a450bbef796a"
+        },
+        "scores.parquet": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/03-fp8/scores.parquet",
+          "bytes": 147413346,
+          "sha256": "73c747fd9847fb67c2b67f7ff968d6363a91cc4f09754acfd1dcbb0e732d78ee"
+        },
+        "benchmark.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/03-fp8/benchmark.log",
+          "bytes": 2861,
+          "sha256": "757d07f6cb410bd88eb2da88bf029d7229e1f2ca6168ef7465e0afd85d6748f5"
+        }
+      },
+      "04-bf16": {
+        "complete.json": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/04-bf16/complete.json",
+          "bytes": 753,
+          "sha256": "157e800a5d817d81ffa0867a71ad63dbc57bb790eccca329358a061c8a757ec4"
+        },
+        "scores.parquet": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/04-bf16/scores.parquet",
+          "bytes": 147413656,
+          "sha256": "32f72b302d38c57dc7e319f11b7f891ce3cbe588d352d95f33a28583059ced71"
+        },
+        "benchmark.log": {
+          "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/04-bf16/benchmark.log",
+          "bytes": 2345,
+          "sha256": "53a6a8bf129da3db7a318b96fe1cb890d6ce9d20619ddc969908068503724e69"
+        }
+      }
+    },
+    "timing_inputs": {
+      "gpu-telemetry.csv": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/gpu-telemetry.csv",
+        "bytes": 68675,
+        "sha256": "2d7bb8066942db94bb32076ad0f45c89d82a55cf1a2658c133142209b2759167"
+      },
+      "host-telemetry.jsonl": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/host-telemetry.jsonl",
+        "bytes": 457002,
+        "sha256": "cd4d7ee9c8c25c2b4d7b431d58dd2fb4e8a610878bed18e21e85990e800ebc3c"
+      },
+      "01-bf16/benchmark.json": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/01-bf16/benchmark.json",
+        "bytes": 2208,
+        "sha256": "3ea3f2acf4597fcdea8e1677575201e938608778ce8077545fb380d13cf19da9"
+      },
+      "01-bf16/intervals.jsonl": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/01-bf16/intervals.jsonl",
+        "bytes": 844,
+        "sha256": "a73ab153a2afc8a66b5f44b7f910d8b3e4776cddbd4e8cec44e88ace07f62d87"
+      },
+      "02-fp8/benchmark.json": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/02-fp8/benchmark.json",
+        "bytes": 2238,
+        "sha256": "21db3142f0f6d31dbd14d1f922bd7220706b24f3e83cb72513e7c44e05bb820e"
+      },
+      "02-fp8/intervals.jsonl": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/02-fp8/intervals.jsonl",
+        "bytes": 840,
+        "sha256": "27fcc4ee6805d57c9da1692d9b9891df6b84d26ab579f00305ede0ed0441ff97"
+      },
+      "03-fp8/benchmark.json": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/03-fp8/benchmark.json",
+        "bytes": 2241,
+        "sha256": "8381fc30b4aa1a50d6a66fb199552334f19bd0f53d8be648d2f83458a9196efa"
+      },
+      "03-fp8/intervals.jsonl": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/03-fp8/intervals.jsonl",
+        "bytes": 840,
+        "sha256": "a3811caa17a8abaf1bed82d0a51c0ca117fee841b273e1edd96c01b237673e93"
+      },
+      "04-bf16/benchmark.json": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/04-bf16/benchmark.json",
+        "bytes": 2205,
+        "sha256": "356075268ea275cff216f43211478c79e2f9bf5791a84a165ea9aa3ab84f276f"
+      },
+      "04-bf16/intervals.jsonl": {
+        "uri": "s3://marin-us-east-02a/marin/experiments/issue-595/rates595-paired-h100-20261128-170939/04-bf16/intervals.jsonl",
+        "bytes": 838,
+        "sha256": "34f6a8da40eed1112e3807c252352f926359a8892b5210c9c3ca927ac507f414"
+      }
+    }
+  }
 }

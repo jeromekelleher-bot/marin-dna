@@ -9,6 +9,8 @@ from pathlib import Path
 import re
 from statistics import median
 
+from paired_telemetry import SEGMENTS
+
 HERE = Path(__file__).resolve().parent
 ROWS = 9490
 TEST_SHA = "658dd3c49b2c171d7c5c973e014dd3d2e8d425e25187eb30513df64d9ef58883"
@@ -76,6 +78,24 @@ def calculate(kind, measured, length, batch):
     return ROWS, seconds, 1, 1, repetitions
 
 
+def validate_files(directory, inputs):
+    for name, info in inputs.items():
+        data = (directory / name).read_bytes()
+        if len(data) != info["bytes"] or hashlib.sha256(data).hexdigest() != info["sha256"]:
+            raise ValueError(f"Corrupt timing input {directory / name}")
+
+
+def paired_seconds(kind, records):
+    """Pool all six complete passes from two fresh processes on the same H100."""
+    passes = []
+    for segment in SEGMENTS:
+        if segment.split("-")[1] == kind:
+            measured = records[segment]
+            calculate(kind, measured, 256, 128)
+            passes.extend(measured["repeat_seconds"])
+    return median(passes), len(passes)
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
@@ -85,16 +105,22 @@ def main():
     missing = {model[0] for model in MODELS} - sources["runs"].keys()
     if missing:
         raise SystemExit("Missing completed timing records: " + ", ".join(sorted(missing)))
+    control = sources["paired_control"]
+    directory = HERE / "records" / "paired"
+    paired_records = {s: json.loads((directory / s / "benchmark.json").read_text()) for s in SEGMENTS}
+    if args.archive:
+        raw = args.archive / "paired"
+        validate_files(raw, control["timing_inputs"])
+        for segment, record in paired_records.items():
+            if json.loads((raw / segment / "benchmark.json").read_text()) != record:
+                raise ValueError(f"Archived timings differ for paired/{segment}")
     rows = []
     for kind, model, label, length, batch in MODELS:
         run = sources["runs"][kind]
         filename = "shard-times.json" if kind == "evo40b" else "benchmark.json"
         measured = json.loads((HERE / "records" / kind / filename).read_text())
         if args.archive:
-            for name, info in run["timing_inputs"].items():
-                data = (args.archive / kind / name).read_bytes()
-                if len(data) != info["bytes"] or hashlib.sha256(data).hexdigest() != info["sha256"]:
-                    raise ValueError(f"Corrupt timing input {kind}/{name}")
+            validate_files(args.archive / kind, run["timing_inputs"])
             if kind == "evo40b":
                 original = {"partitions": [extract_shard((args.archive / kind / f"logs/partition-{i}.log").read_text())
                                             for i in range(4)]}
@@ -109,12 +135,16 @@ def main():
             if original != measured:
                 raise ValueError(f"Archived timings differ for {kind}")
         timed, seconds, gpus, workers, repeats = calculate(kind, measured, length, batch)
+        job = run["iris"]
+        if kind in {"bf16", "fp8"}:
+            seconds, repeats = paired_seconds(kind, paired_records)
+            job = control["iris"]
         worker_rate = 3600 * timed / seconds
         rows.append(dict(method_id=model, configuration=label, context_tokens=length, batch_size=batch,
                          variants_scored=ROWS, variants_timed=timed, gpus_per_worker=gpus, concurrent_workers=workers,
                          repetitions=repeats, summed_worker_scoring_seconds=f"{seconds:.6f}",
                          variants_per_worker_hour=f"{worker_rate:.6f}", variants_per_h100_hour=f"{worker_rate/gpus:.6f}",
-                         iris_job=run["iris"]))
+                         iris_job=job))
     with args.output.open("w", newline="") as stream:
         writer = csv.DictWriter(stream, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()

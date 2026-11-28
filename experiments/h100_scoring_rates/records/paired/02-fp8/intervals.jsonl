@@ -1,0 +1,6 @@
+{"strand": "+", "repetition": 1, "start_epoch": 1795886051.206042, "end_epoch": 1795886069.2516026, "measured_seconds": 18.045552557334304}
+{"strand": "+", "repetition": 2, "start_epoch": 1795886075.5351605, "end_epoch": 1795886111.4379458, "measured_seconds": 35.90278078336269}
+{"strand": "+", "repetition": 3, "start_epoch": 1795886111.6303103, "end_epoch": 1795886135.8745272, "measured_seconds": 24.244213426485658}
+{"strand": "-", "repetition": 1, "start_epoch": 1795886144.1301277, "end_epoch": 1795886178.652235, "measured_seconds": 34.52210308238864}
+{"strand": "-", "repetition": 2, "start_epoch": 1795886179.1041229, "end_epoch": 1795886212.1835408, "measured_seconds": 33.079415045678616}
+{"strand": "-", "repetition": 3, "start_epoch": 1795886217.6242602, "end_epoch": 1795886248.230481, "measured_seconds": 30.60621801018715}

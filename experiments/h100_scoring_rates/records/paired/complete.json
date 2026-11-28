@@ -1,0 +1,27 @@
+{
+  "job": "/jk/rates595-paired-h100-20261128-170939/0:0",
+  "rows": 9490,
+  "segments": [
+    "01-bf16",
+    "02-fp8",
+    "03-fp8",
+    "04-bf16"
+  ],
+  "artifacts": [
+    {
+      "file": "gpu-telemetry.csv",
+      "sha256": "2d7bb8066942db94bb32076ad0f45c89d82a55cf1a2658c133142209b2759167",
+      "bytes": 68675
+    },
+    {
+      "file": "host-telemetry.jsonl",
+      "sha256": "cd4d7ee9c8c25c2b4d7b431d58dd2fb4e8a610878bed18e21e85990e800ebc3c",
+      "bytes": 457002
+    },
+    {
+      "file": "environment.txt",
+      "sha256": "92ca631f9653f84d0e9d664bf04b2d38782f8d5fc48b81f8e215d0e1f434a436",
+      "bytes": 1743
+    }
+  ]
+}

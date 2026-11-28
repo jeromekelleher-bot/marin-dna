@@ -23,7 +23,8 @@ def main():
     store = session.client("s3", endpoint_url="https://cwobject.com", region_name="US-EAST-02A",
                            config=Config(signature_version="s3v4", s3={"addressing_style": "virtual"}))
     manifest = json.loads(Path(__file__).with_name("sources.json").read_text())
-    for kind, run in manifest["runs"].items():
+    runs = {**manifest["runs"], "paired": manifest["paired_control"]}
+    for kind, run in runs.items():
         for name, spec in run["timing_inputs"].items():
             dest = args.cache / kind / name
             dest.parent.mkdir(parents=True, exist_ok=True)
